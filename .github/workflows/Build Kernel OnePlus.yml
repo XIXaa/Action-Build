@@ -6,7 +6,7 @@ on:
         type: choice
         description: "配置文件"
         required: true
-        default: oneplus_ace2_pro_b
+        default: oneplus_ace5
         options:
           - oneplus_nord_n30_se_5g_v
           - oneplus_10r_v
@@ -37,6 +37,7 @@ on:
           - oneplus_13r_b
           - oneplus_ace3_pro_b
           - oneplus_ace5_b
+          - oneplus_ace5
           - oneplus_pad_pro_b
           - oneplus_pad2_b
           - oneplus_nord_ce5_b
@@ -75,7 +76,7 @@ on:
         type: choice
         description: "SUSFS模块下载调用方向"
         required: true
-        default: N/A
+        default: CI
         options:
           - CI
           - Release
@@ -84,7 +85,7 @@ on:
         type: choice
         description: "内核模块实现方式"
         required: true
-        default: KPM
+        default: N/A
         options:
           - KPM
           - KPN
@@ -113,7 +114,7 @@ on:
         type: string
         description: "ZRAM(0关闭1开启)/算法名/大小"
         required: true
-        default: "0/lz4kd/8589934592"
+        default: "1/lz4kd/8589934592"
       SUFFIX:
         type: string
         description: "自定义内核后缀(不输入使用RAND_STR或-1关闭)"
@@ -127,7 +128,7 @@ on:
         type: boolean
         description: "是否启用极速构建？"
         required: true
-        default: true
+        default: false
       LSM_BBG:
         type: boolean
         description: "是否启用关键分区写入保护模块(BBG)？"
@@ -147,7 +148,7 @@ on:
         type: boolean
         description: "是否添加Unicode不可见字码点绕过读取漏洞修复？"
         required: true
-        default: false
+        default: true
       SCHED_HMBIRD:
         type: boolean
         description: "是否添加风驰驱动1.0？"
